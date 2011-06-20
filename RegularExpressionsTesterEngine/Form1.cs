@@ -38,7 +38,7 @@ namespace RegularExpressionsTesterEngine
 
                 foreach (Group g in m.Groups)
                 {
-                    node.Nodes.Add(g.Value);
+                    node.Nodes.Add(r.GroupNameFromNumber(g.Index)).Nodes.Add(g.Value);
                 }
 
                 m = m.NextMatch();
