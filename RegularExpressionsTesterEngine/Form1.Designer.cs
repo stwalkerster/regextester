@@ -144,6 +144,7 @@
             // splitContainer4.Panel2
             // 
             this.splitContainer4.Panel2.Controls.Add(this.textBox4);
+            this.splitContainer4.Panel2Collapsed = true;
             this.splitContainer4.Size = new System.Drawing.Size(471, 228);
             this.splitContainer4.SplitterDistance = 118;
             this.splitContainer4.TabIndex = 0;
@@ -156,7 +157,7 @@
             this.textBox2.Location = new System.Drawing.Point(0, 0);
             this.textBox2.Multiline = true;
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(471, 118);
+            this.textBox2.Size = new System.Drawing.Size(471, 228);
             this.textBox2.TabIndex = 1;
             this.textBox2.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
@@ -185,6 +186,7 @@
             // splitContainer3.Panel2
             // 
             this.splitContainer3.Panel2.Controls.Add(this.textBox3);
+            this.splitContainer3.Panel2Collapsed = true;
             this.splitContainer3.Size = new System.Drawing.Size(893, 217);
             this.splitContainer3.SplitterDistance = 296;
             this.splitContainer3.TabIndex = 0;
@@ -195,7 +197,7 @@
             this.treeView1.Font = new System.Drawing.Font("Lucida Console", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.treeView1.Location = new System.Drawing.Point(0, 0);
             this.treeView1.Name = "treeView1";
-            this.treeView1.Size = new System.Drawing.Size(296, 217);
+            this.treeView1.Size = new System.Drawing.Size(893, 217);
             this.treeView1.TabIndex = 0;
             // 
             // textBox3
