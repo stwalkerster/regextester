@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
@@ -24,39 +25,65 @@ namespace RegularExpressionsTesterEngine
 
         private void match()
         {
-
-            Regex r = new Regex(textBox2.Text);
-
             treeView1.Nodes.Clear();
 
-            Match m = r.Match(textBox1.Text);
-            while (m.Success)
+            try
             {
-                
+                Regex r = new Regex(textBox2.Text);
 
-                TreeNode node = treeView1.Nodes.Add(m.Value);
 
-                foreach (Group g in m.Groups)
+
+                Match m = r.Match(textBox1.Text);
+                while (m.Success)
                 {
-                    node.Nodes.Add(r.GroupNameFromNumber(g.Index)).Nodes.Add(g.Value);
+
+                    TreeNode node = treeView1.Nodes.Add(m.Value);
+
+                    foreach (Group g in m.Groups)
+                    {
+                        node.Nodes.Add(r.GroupNameFromNumber(g.Index)).Nodes.Add(g.Value);
+                    }
+
+                    m = m.NextMatch();
+
                 }
 
-                m = m.NextMatch();
-
+                textBox3.Text = r.Replace(textBox1.Text, textBox4.Text);
             }
-
-           textBox3.Text = r.Replace(textBox1.Text, textBox4.Text);
+            catch (ArgumentException ex)
+            {
+                TreeNode node = treeView1.Nodes.Add(ex.Message);
+                node.ForeColor = Color.Red;
+            }
         }
 
         private void toolStripButton3_Click(object sender, EventArgs e)
         {
             splitContainer4.Panel2Collapsed = splitContainer3.Panel2Collapsed = !toolStripButton3.Checked;
+            toolStripButton7.Visible = toolStripButton3.Checked;
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
             if(toolStripButton2.Checked)
                 match();
+        }
+
+        private void toolStripButton2_Click(object sender, EventArgs e)
+        {
+            if(toolStripButton2.Checked)
+                match();
+            
+        }
+
+        private void toolStripButton4_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog ofd = new OpenFileDialog();
+            if(ofd.ShowDialog()==DialogResult.OK)
+            {
+                StreamReader r = new StreamReader(ofd.OpenFile());
+                textBox1.Text = r.ReadToEnd();
+            }
         }
     }
 }
