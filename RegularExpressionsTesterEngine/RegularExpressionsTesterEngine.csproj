@@ -23,7 +23,7 @@
     <UpdateInterval>7</UpdateInterval>
     <UpdateIntervalUnits>Days</UpdateIntervalUnits>
     <UpdatePeriodically>false</UpdatePeriodically>
-    <UpdateRequired>false</UpdateRequired>
+    <UpdateRequired>true</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
     <InstallUrl>http://stwalkerster.co.uk/downloads/regextester/</InstallUrl>
     <UpdateUrl>http://stwalkerster.co.uk/downloads/regextester/</UpdateUrl>
@@ -32,11 +32,12 @@
     <ProductName>Regular Expressions Tester Engine</ProductName>
     <PublisherName>Simon Walker</PublisherName>
     <SuiteName>Regular Expressions Tester Engine</SuiteName>
+    <MinimumRequiredVersion>1.0.0.3</MinimumRequiredVersion>
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>index.php</WebPage>
     <OpenBrowserOnPublish>false</OpenBrowserOnPublish>
     <DisallowUrlActivation>true</DisallowUrlActivation>
-    <ApplicationRevision>3</ApplicationRevision>
+    <ApplicationRevision>4</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
